@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="c-card">
+
+    <div class="c-card-h">
+        Registro
+    </div>
+
+    <div class="c-card-b">
+        <form action="/auth/post-user" method="POST">
+            <p><input type="text" name="nome" placeholder="Nome" /></p>
+            <p><input type="email" name="email" placeholder="E-Mail" /></p>
+            <p><input type="password" name="senha" placeholder="Senha" /></p>
+            <p><input type="submit" class="sub-but" value="Registrar" /></p>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

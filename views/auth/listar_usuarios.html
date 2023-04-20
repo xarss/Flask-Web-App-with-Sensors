@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="c-card">
+
+    <!--Titulo-->
+    <div class="c-card-h">
+        Usuarios
+    </div>
+
+    <!--Corpo-->
+    <div class="c-card-b" style="align-items: start;">
+        {% if users %}
+            <!--Tablela de Usuarios-->
+            <table class="user-table">
+
+                <!--Header-->
+                <tr>
+                    {% for key in users[0].keys() %}
+
+                    <th> {{ key.capitalize() }} </th>
+
+                    {% endfor %}
+                </tr>
+                
+                <!--Listagem-->
+                {% for user in users %}
+                <tr>
+                    {% for key in user.keys() %}
+
+                    <td> {{ user[key] }} </td>
+
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+
+            </table> 
+        {% else %}
+            <h1>Não existem usuarios</h1>
+        {% endif %}
+
+        
+    </div>
+</div>
+
+{% endblock content %}

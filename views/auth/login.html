@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="c-card">
+
+    <div class="c-card-h">
+        Login
+    </div>
+
+    <div class="c-card-b">
+
+        <!--Login-->
+        <form action="/auth/naoadicionado" method="POST">
+            <p>Login:</p>
+            <p><input type="text" name="nome" placeholder="Nome" /></p>
+            <p><input type="password" name="senha" placeholder="Senha" /></p>
+            <p><input type="submit" class="sub-but" value="Logar" /></p>
+        </form>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
