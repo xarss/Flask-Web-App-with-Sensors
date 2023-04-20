@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="flaskicon.png" width="100px"/>
+  <img src="static/img/170781.png" width="100px"/>
 </p>
 
 <h1 align="center"> Flask Web App </h1>
