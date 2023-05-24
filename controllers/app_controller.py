@@ -16,6 +16,13 @@ def create_app() -> Flask:
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
 
+    from models.auth.user import User
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        # since the user_id is just the primary key of our user table, use it in the query for the user
+        return User.query.get(int(user_id))
+
     app.register_blueprint(auth, url_prefix = '/auth')
     app.register_blueprint( iot, url_prefix =  '/iot')
 

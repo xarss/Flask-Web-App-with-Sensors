@@ -1,4 +1,4 @@
-from models import db
+from models.db import db
 from flask import Flask
 
 def create_db(app:Flask):

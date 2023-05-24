@@ -10,7 +10,10 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="static/img/170781.png" width="30" height="30" alt="">
+            <!--
+                <img src="static/img/170781.png" width="30" height="30" alt="">
+            -->
+            <img src="{{ url_for('static', filename='img/170781.png') }}" width="30" height="30" alt="">
         </a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">

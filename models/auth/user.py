@@ -7,3 +7,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(30), nullable=False, unique=True)
     email = db.Column(db.String(30), nullable=False, unique=True)
     password = db.Column(db.String(1024), nullable=False) 
+
+    def listUsers():
+        users = User.query.all()
+        return users

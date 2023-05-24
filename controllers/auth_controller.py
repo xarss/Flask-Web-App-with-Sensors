@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, request, flash, url_for
-from models import db
+from models.db import db
 from models.auth.user import User
 from werkzeug.security import generate_password_hash
 
@@ -44,6 +44,7 @@ def registrar():
 
 @auth.route("/listar_usuarios")
 def listar_usuarios():
+    users = User.listUsers()
     return render_template("auth/listar_usuarios.html", users=users)
 
 @auth.route("/auth_module")

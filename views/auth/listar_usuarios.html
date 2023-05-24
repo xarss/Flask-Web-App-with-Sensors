@@ -16,21 +16,17 @@
 
                 <!--Header-->
                 <tr>
-                    {% for key in users[0].keys() %}
 
-                    <th> {{ key.capitalize() }} </th>
+                    <th> Name </th>
 
-                    {% endfor %}
                 </tr>
                 
                 <!--Listagem-->
                 {% for user in users %}
                 <tr>
-                    {% for key in user.keys() %}
 
-                    <td> {{ user[key] }} </td>
+                    <td> {{ user.username }} </td>
 
-                    {% endfor %}
                 </tr>
                 {% endfor %}
 
