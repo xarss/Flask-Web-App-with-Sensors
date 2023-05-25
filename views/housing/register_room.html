@@ -1,0 +1,9 @@
+{% extends "property/property_index.html" %}
+{% block content %}
+<h1>Cadastro de Cômodo</h1>
+
+<form action="/admin/property/save_room" method="POST">
+    {{ forms.input(label = 'Name', name = 'name', id = 'name', type='text', box_size = 6) }}
+    {{ forms.button(label = 'Cadastrar Cômodo', box_size = 12) }}
+</form>
+{% endblock %}

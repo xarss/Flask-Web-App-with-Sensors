@@ -1,0 +1,22 @@
+{% extends "property/property_index.html" %}
+{% block main %}
+
+<table id="view_rooms">
+    <thead>
+        <tr>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if rooms %}
+        {% for r in rooms %}
+        <tr>
+            <td>{{ r.name }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+            <h1>Não há cômodos cadastrados</h1>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

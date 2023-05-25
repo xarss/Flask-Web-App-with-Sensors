@@ -1,0 +1,10 @@
+{% extends "property/property_index.html" %}
+{% block content %}
+<h1>Cadastro de Casa</h1>
+
+<form action="/admin/property/save_house" method="POST">
+    {{ forms.input(label = 'Name', name = 'name', id = 'name', type='text', box_size = 6) }}
+    {{ forms.input(label = 'Address', name = 'address', id = 'address', type='text', box_size = 6) }}
+    {{ forms.button(label = 'Cadastrar Casa', box_size = 12) }}
+</form>
+{% endblock %}

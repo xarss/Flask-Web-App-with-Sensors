@@ -1,0 +1,17 @@
+{% extends "iot/iot_index.html" %}
+{% block content %}
+
+<div class="c-card">
+    <div class="c-card-h">Módulo de IOT</div>
+    <div class="c-card-b">
+        <form action="/admin/iot/save_actuator" method="POST">
+            {{ forms.input(label = 'Name', name = 'name', id = 'name', type='text', box_size = 6) }}
+            {{ forms.input(label = 'Description', name = 'description', id = 'description', type='text', box_size = 6) }}
+            {{ forms.input(label = 'Type', name = 'type', id = 'type', type='text', box_size = 6) }}
+            {{ forms.input(label = 'is Active', name = 'isActive', id = 'isActive', type='text', box_size = 6) }}
+            {{ forms.button(label = 'Cadastrar Atuador', box_size = 12) }}
+        </form>
+    </div>
+</div>
+
+{% endblock %}

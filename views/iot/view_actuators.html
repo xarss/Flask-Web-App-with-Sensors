@@ -1,0 +1,28 @@
+{% extends "iot/iot_index.html" %}
+{% block main %}
+
+<table id="view_actuator">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descricao</th>
+            <th>Type</th>
+            <th>is Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if actuators %}
+        {% for a in actuators %}
+        <tr>
+            <td>{{ a.name }}</td>
+            <td>{{ a.description }}</td>
+            <td>{{ a.type }}</td>
+            <td>{{ a.isActive }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+            <h1>Não há atuadores cadastrados</h1>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

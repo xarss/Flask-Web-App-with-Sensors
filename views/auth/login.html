@@ -1,5 +1,14 @@
 {% extends "base.html" %}
+{% import 'utils/forms.html' as forms %}
 {% block content %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="notification is-danger">
+            {{ messages[0] }}
+        </div>
+    {% endif %}
+{% endwith %}
 
 <div class="c-card">
 
@@ -10,11 +19,11 @@
     <div class="c-card-b">
 
         <!--Login-->
-        <form action="/auth/naoadicionado" method="POST">
-            <p>Login:</p>
-            <p><input type="text" name="nome" placeholder="Nome" /></p>
-            <p><input type="password" name="senha" placeholder="Senha" /></p>
-            <p><input type="submit" class="sub-but" value="Logar" /></p>
+        <form action="/auth/login_post" method="POST">   
+            {{ forms.input(     label    = 'Email',     name = 'email',     id = 'email',     type='text',     box_size = 6) }}
+            {{ forms.input(     label    = 'Password',  name = 'password',  id = 'password',  type='password', box_size = 6) }}
+            {{ forms.checkbox(  label    = 'Remember',  name = 'remember',  id = 'remember', box_size = 6) }}
+            {{ forms.button(    label    = 'Entrar', box_size = 12) }}
         </form>
     </div>
 

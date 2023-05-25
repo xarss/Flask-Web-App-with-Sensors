@@ -1,0 +1,28 @@
+{% extends "iot/iot_index.html" %}
+{% block main %}
+
+<table id="view_microcontroller">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descricao</th>
+            <th>Ports</th>
+            <th>is Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if micros %}
+        {% for m in micros %}
+        <tr>
+            <td>{{ m.name }}</td>
+            <td>{{ m.description }}</td>
+            <td>{{ m.ports }}</td>
+            <td>{{ m.isActive }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+            <h1>Não há microcontroladores cadastrados</h1>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "housing/housing_index.html" %}
+{% block main %}
+
+<table id="view_houses">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Endereco</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if houses %}
+        {% for h in houses %}
+        <tr>
+            <td>{{ h.name    }}</td>
+            <td>{{ h.address }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+            <h1>Não há casas cadastradas</h1>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

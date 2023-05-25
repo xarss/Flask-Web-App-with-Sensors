@@ -1,0 +1,28 @@
+{% extends "iot/iot_index.html" %}
+{% block main %}
+
+<table id="view_sensors">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descricao</th>
+            <th>Measure</th>
+            <th>is Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if sensors %}
+        {% for s in sensors %}
+            <tr>
+                <td>{{ s.name }}</td>
+                <td>{{ s.description }}</td>
+                <td>{{ s.measure }}</td>
+                <td>{{ s.isActive }}</td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <h1>Não há sensores cadastrados</h1>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}
