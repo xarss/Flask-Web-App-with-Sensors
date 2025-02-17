@@ -12,7 +12,7 @@ class Microcontroller(db.Model):
 
     @staticmethod
     def listMicrocontrollers():
-        mc = Microcontroller.query.all()
+        mc = Microcontroller.query.join(Device, Device.id == Microcontroller.id).add_columns(Device.name, Device.description, Device.isActive, Microcontroller.ports).all()
         return mc
 
     @staticmethod

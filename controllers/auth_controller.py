@@ -13,9 +13,12 @@ users = []
 # ------------------ Rotas ------------------ #
 
 @auth.route("/")
-@login_required
 def auth_index():
-    return render_template("auth/auth_index.html")
+    return render_template("auth/auth_module.html")
+
+@auth.route("/auth_module")
+def auth_module():
+    return render_template("auth/auth_module.html")
 
 @auth.route("/login")
 def login():
@@ -69,6 +72,3 @@ def login_post():
 
     return redirect(url_for('housing.view_houses'))
 
-@auth.route("/auth_module")
-def auth_module():
-    return render_template("auth/auth_module.html")

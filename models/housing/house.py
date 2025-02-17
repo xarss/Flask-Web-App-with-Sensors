@@ -10,7 +10,7 @@ class House(db.Model):
     rooms = db.relationship('Room', backref='houses')
 
     @staticmethod
-    def listSensors():
+    def listHouses():
         houses = House.query.all()
         return houses
 

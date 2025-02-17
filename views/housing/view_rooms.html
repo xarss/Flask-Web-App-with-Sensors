@@ -1,17 +1,42 @@
-{% extends "property/property_index.html" %}
-{% block main %}
+{% extends "housing/housing_index.html" %}
+{% block content %}
+{% import 'utils/forms.html' as forms %}
 
-<table id="view_rooms">
+{% if rooms %}
+<table class="table table-striped" id="view_rooms">
     <thead>
         <tr>
             <th>Nome</th>
         </tr>
     </thead>
     <tbody>
-        {% if rooms %}
         {% for r in rooms %}
         <tr>
             <td>{{ r.name }}</td>
+            <td>
+                <form action="/housing/view_room_sensors" method="POST">
+                    <input type="hidden" name="room_id" value="{{ r.id }}">
+                    <button class="btn btn-primary" type="submit">Listar Sensores</button>
+                </form>
+            </td>
+            <td>
+                <form action="/housing/view_room_actuators" method="POST">
+                    <input type="hidden" name="room_id" value="{{ r.id }}">
+                    <button class="btn btn-primary" type="submit">Listar Atuadores</button>
+                </form>
+            </td>
+            <td>
+                <form action="/housing/register_sensor_room" method="POST">
+                    <input type="hidden" name="room_id" value="{{ r.id }}">
+                    <button class="btn btn-success" type="submit">Adicionar Sensor</button>
+                </form>
+            </td>
+            <td>
+                <form action="/housing/register_actuator_room" method="POST">
+                    <input type="hidden" name="room_id" value="{{ r.id }}">
+                    <button class="btn btn-success" type="submit">Adicionar Atuador</button>
+                </form>
+            </td>
         </tr>
         {% endfor %}
         {% else %}
@@ -19,4 +44,4 @@
         {% endif %}
     </tbody>
 </table>
-{% endblock %}
+{% endblock content %}

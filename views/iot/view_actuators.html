@@ -1,23 +1,21 @@
 {% extends "iot/iot_index.html" %}
-{% block main %}
+{% block content %}
 
 <table id="view_actuator">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Descricao</th>
+            <th>ID</th>
+            <th>Device ID</th>
             <th>Type</th>
-            <th>is Active</th>
         </tr>
     </thead>
     <tbody>
         {% if actuators %}
         {% for a in actuators %}
         <tr>
-            <td>{{ a.name }}</td>
-            <td>{{ a.description }}</td>
+            <td>{{ a.id }}</td>
+            <td>{{ a.device_id }}</td>
             <td>{{ a.type }}</td>
-            <td>{{ a.isActive }}</td>
         </tr>
         {% endfor %}
         {% else %}
@@ -25,4 +23,4 @@
         {% endif %}
     </tbody>
 </table>
-{% endblock %}
+{% endblock content %}

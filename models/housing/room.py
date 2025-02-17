@@ -1,4 +1,5 @@
-from models.db import db
+from models.db            import db
+from models.housing.house import House
 
 class Room(db.Model):
     __tablename__ = 'rooms'
@@ -7,7 +8,7 @@ class Room(db.Model):
     name = db.Column(db.String(64), nullable=False)
 
     house_id    = db.Column(db.Integer, db.ForeignKey('houses.id'))
-    reads       = db.relationship('Read', backref='room')
+    sensors     = db.relationship('Sensor', backref='room')
     activations = db.relationship('Activation', backref='room')
 
     @staticmethod
@@ -16,8 +17,10 @@ class Room(db.Model):
         return room
 
     @staticmethod
-    def insert(name):
+    def insert(id, name):
+        house = House.query.get(id)
         room = Room(name=name)
+        house.rooms.append(room)
         db.session.add(room)
         db.session.commit()
 

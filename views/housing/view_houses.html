@@ -1,7 +1,8 @@
 {% extends "housing/housing_index.html" %}
-{% block main %}
+{% block content %}
+{% import 'utils/forms.html' as forms %}
 
-<table id="view_houses">
+<table class="table table-striped" id="view_houses">
     <thead>
         <tr>
             <th>Nome</th>
@@ -10,15 +11,29 @@
     </thead>
     <tbody>
         {% if houses %}
-        {% for h in houses %}
-        <tr>
-            <td>{{ h.name    }}</td>
-            <td>{{ h.address }}</td>
-        </tr>
-        {% endfor %}
+            {% for h in houses %}
+                
+                <tr>
+                    <td> {{ h.name }} </td>
+                    <td> {{ h.address }} </td>
+                    <td> 
+                        <form action="/housing/view_rooms" method="POST">
+                            <input type="hidden" name="house_id" value="{{ h.id }}">
+                            {{ forms.button("Listar Cômodos", type= "submit", box_size = 12) }}
+                        </form>
+                    </td>
+                    <td> 
+                        <form action="/housing/register_room" method="POST">
+                            <input type="hidden" name="house_id" value="{{ h.id }}">
+                            {{ forms.button("Adicionar um cômodo", type= "submit", box_size = 12) }}
+                        </form>
+                    </td>
+
+                </tr>
+            {% endfor %}
         {% else %}
             <h1>Não há casas cadastradas</h1>
         {% endif %}
     </tbody>
 </table>
-{% endblock %}
+{% endblock content %}

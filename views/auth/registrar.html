@@ -4,19 +4,19 @@
 
 <div class="c-card">
 
-    <div class="c-card-h">
+    <div class="display-4 mt-5 mb-5 center">
         Registro
     </div>
 
     <div class="c-card-b">
-        <form action="/auth/save_user" method="POST">   
-            {{ forms.input(label    = 'Name',      name = 'name',      id = 'name',      type='text',     box_size = 6) }}
-            {{ forms.input(label    = 'Email',     name = 'email',     id = 'email',     type='text',     box_size = 6) }}
-            {{ forms.input(label    = 'Username',  name = 'username',  id = 'username',  type='text',     box_size = 6) }}
-            {{ forms.input(label    = 'Cpf',       name = 'cpf',       id = 'cpf',       type='text',     box_size = 6) }}
-            {{ forms.input(label    = 'Birth',     name = 'birthDate', id = 'birthDate', type='date',     box_size = 6) }}
-            {{ forms.input(label    = 'Password',  name = 'password',  id = 'password',  type='password', box_size = 6) }}
-            {{ forms.button(label   = 'Registrar', box_size = 12) }}
+        <form action="/auth/save_user" method="POST" class="d-flex justify-content-center flex-column">   
+            {{ forms.input(label    = 'Name',      name = 'name',      id = 'name',      type='text',     box_size = 18) }}
+            {{ forms.input(label    = 'Email',     name = 'email',     id = 'email',     type='text',     box_size = 18) }}
+            {{ forms.input(label    = 'Username',  name = 'username',  id = 'username',  type='text',     box_size = 18) }}
+            {{ forms.input(label    = 'Cpf',       name = 'cpf',       id = 'cpf',       type='text',     box_size = 18) }}
+            {{ forms.input(label    = 'Birth',     name = 'birthDate', id = 'birthDate', type='date',     box_size = 18) }}
+            {{ forms.input(label    = 'Password',  name = 'password',  id = 'password',  type='password', box_size = 18) }}
+            <button class="btn btn-info center mt-5">Registrar</button>
         </form>
     </div>
 

@@ -12,18 +12,18 @@
 
 <div class="c-card">
 
-    <div class="c-card-h">
+    <div class="display-4 center mt-5 mb-5">
         Login
     </div>
 
     <div class="c-card-b">
 
         <!--Login-->
-        <form action="/auth/login_post" method="POST">   
-            {{ forms.input(     label    = 'Email',     name = 'email',     id = 'email',     type='text',     box_size = 6) }}
-            {{ forms.input(     label    = 'Password',  name = 'password',  id = 'password',  type='password', box_size = 6) }}
-            {{ forms.checkbox(  label    = 'Remember',  name = 'remember',  id = 'remember', box_size = 6) }}
-            {{ forms.button(    label    = 'Entrar', box_size = 12) }}
+        <form action="/auth/login_post" method="POST" class="d-flex justify-content-center flex-column">   
+            {{ forms.input(     label    = 'Email',     name = 'email',     id = 'email',     type='text',     box_size = 12) }}
+            {{ forms.input(     label    = 'Password',  name = 'password',  id = 'password',  type='password', box_size = 12) }}
+            {{ forms.checkbox(  label    = 'Remember',  name = 'remember',  id = 'remember', box_size = 12) }}
+            <button class="btn btn-info center mt-5">Entrar</button>
         </form>
     </div>
 

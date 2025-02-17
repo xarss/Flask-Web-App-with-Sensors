@@ -1,14 +1,67 @@
-<!-- home.html -->
 {% extends "base.html" %}
 {% block content %}
-<div class="c-card">
-    <div class="c-card-h">Automação Residencial</div>
-    <div class="c-card-b">
-        <div class="fill">
-            <p>Programação de lâmpadas<p>
-            <p>Sistema de notificação de caixa d'água</p>
-            <p>Ajuste de temperatura da casa</p> 
+
+<div class="container-fluid m-0 ">
+    
+    <div class="row py-5 bg-info text-white text-center">
+        <div class="col">
+            <h1 class="display-4">Wolfram Automações</h1>
         </div>
     </div>
+    
+    <div class="row py-5 bg-light text-center">
+        <div class="d-flex flex-column center" style="width: 100%;">
+            <h2 class="mb-4 ">Sobre Automação Residencial</h2>
+            <p class="text-center" style="max-width: 50em;">A automação residencial é um passo para o futuro, proporcionando maior comodidade e segurança em sua casa. Com a nossa ajuda, você pode programar lâmpadas, receber notificações sobre o nível de água da sua caixa d'água, e ajustar a temperatura da sua casa com facilidade e eficiência.</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="w-100 d-flex justify-content-center align-items-center" style="background: url('https://celere-ce.com.br/wp-content/uploads/2021/08/Automac%CC%A7a%CC%83o-residencial-e-predial-na-construc%CC%A7a%CC%83o-civil-scaled.jpeg'); height: 500px; background-repeat: no-repeat; background-size: cover; background-position: 50% 80%">
+            <h1 class="h1 text-white ml-auto" style="margin-right: 8em; margin-bottom: 1em;">Sua casa sob seu controle</h1>
+        </div>
+    </div>
+    
+
+    <div class="row my-5 bg-light text-center align-items-center">
+        <div class="col-md-5 offset-md-1 px-0">
+            <div class="circle-img" style="width:400px; height:400px; border-radius: 50%; background: url('https://cdn.awsli.com.br/2500x2500/710/710156/produto/33328904/dea06db2b1.jpg'); background-size: cover; background-position: 50% 50%"></div>
+        </div>
+        <div class="col-md-5 text-justify">
+            <h3>ESP32</h3>
+            <p>O ESP32 é um chip de baixo custo com sistema integrado de Wi-Fi e Bluetooth, ótimo para projetos de automação residencial. Seu design altamente integrado permite a realização de uma ampla gama de aplicações de IoT.</p>
+        </div>
+    </div>
+
+    <div class="row my-5 bg-light text-center align-items-center">
+        <div class="col-md-5 offset-md-1 px-0">
+            <div class="circle-img" style="width:400px; height:400px; border-radius: 50%; background: url('https://as2.ftcdn.net/v2/jpg/02/81/03/17/1000_F_281031777_Es0oMOzBJK4UHH1jiQJeWAjkQtq5mOJr.jpg'); background-size: cover; background-position: center center"></div>
+        </div>
+        <div class="col-md-5 text-justify">
+            <h3>Servomotor</h3>
+            <p>Com o ESP32, é possível controlar o servomotor usando as saídas PWM (Pulse Width Modulation), permitindo ajustar a posição do eixo com base na largura do pulso fornecida. Essa combinação oferece uma solução flexível e escalável para o controle de servomotores, permitindo a criação de projetos personalizados e inteligentes.
+            </p>
+        </div>
+    </div>
+
+    <div class="row my-5 bg-light text-center align-items-center">
+        <div class="col-md-5 offset-md-1 px-0">
+            <div class="circle-img" style="width:400px; height:400px; border-radius: 50%; background: url('https://cdn.discordapp.com/attachments/977202918895779870/1118676385947455488/image.png'); background-size: cover; background-position: 50% 50%"></div>
+        </div>
+        <div class="col-md-5 text-justify">
+            <h3>DHT22</h3>
+            <p>O sensor de temperatura DHT22 é um dispositivo amplamente utilizado em projetos que requerem monitoramento preciso da temperatura ambiente. Compatível com o ESP32, um microcontrolador de baixo consumo de energia e alto desempenho, o DHT22 fornece leituras confiáveis e estáveis.</p>
+        </div>
+    </div>
+
+
+    <div class="row py-5 bg-dark text-white text-center">
+        <div class="col">
+            <h2 class="">Sobre Nós</h2>
+            <p>Somos uma empresa fictícia especializada em automação residencial. Nosso objetivo é trazer conveniência e segurança para o conforto do seu lar. Com a nossa tecnologia avançada, você tem o controle da sua casa na ponta dos dedos.</p>
+        </div>
+    </div>
+
 </div>
+
 {% endblock %}

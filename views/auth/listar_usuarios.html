@@ -4,20 +4,24 @@
 <div class="c-card">
 
     <!--Titulo-->
-    <div class="c-card-h">
-        Usuarios
+    <div class="display-3 center mb-5 mt-5">
+        Usuários
     </div>
 
     <!--Corpo-->
     <div class="c-card-b" style="align-items: start;">
         {% if users %}
             <!--Tablela de Usuarios-->
-            <table class="user-table">
+            <table class="table table-striped">
 
                 <!--Header-->
                 <tr>
 
-                    <th> Name </th>
+                    <th> Name          </th>
+                    <th> Username      </th>
+                    <th> Email         </th>
+                    <th> Cpf           </th>
+                    <th> Register Date </th>
 
                 </tr>
                 
@@ -25,7 +29,11 @@
                 {% for user in users %}
                 <tr>
 
-                    <td> {{ user.username }} </td>
+                    <td> {{ user.name         }} </td>
+                    <td> {{ user.username     }} </td>
+                    <td> {{ user.email        }} </td>
+                    <td> {{ user.cpf          }} </td>
+                    <td> {{ user.registerDate }} </td>
 
                 </tr>
                 {% endfor %}

@@ -1,14 +1,15 @@
 {% extends "iot/iot_index.html" %}
 {% block content %}
+{% import 'utils/forms.html' as forms %}
 
 <div class="c-card">
     <div class="c-card-h">Módulo de IOT</div>
     <div class="c-card-b">
-        <form action="/admin/iot/save_microcontroller" method="POST">
+        <form action="/iot/save_microcontroller" method="POST">
             {{ forms.input(label = 'Name', name = 'name', id = 'name', type='text', box_size = 6) }}
             {{ forms.input(label = 'Description', name = 'description', id = 'description', type='text', box_size = 6) }}
             {{ forms.input(label = 'Ports', name = 'ports', id = 'ports', type='text', box_size = 6) }}
-            {{ forms.input(label = 'is Active', name = 'isActive', id = 'isActive', type='text', box_size = 6) }}
+            {{ forms.checkbox(label = "is Active", name = "isActive", id = "isActive", checked='', box_size = 12) }}
             {{ forms.button(label = 'Cadastrar Microcontrolador', box_size = 12) }}
         </form>
     </div>

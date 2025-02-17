@@ -1,7 +1,9 @@
 {% extends "iot/iot_index.html" %}
-{% block main %}
+{% import 'utils/forms.html' as forms %}
+{% block content %}
 
 <table id="view_microcontroller">
+    {% if micros %}
     <thead>
         <tr>
             <th>Nome</th>
@@ -11,7 +13,6 @@
         </tr>
     </thead>
     <tbody>
-        {% if micros %}
         {% for m in micros %}
         <tr>
             <td>{{ m.name }}</td>
@@ -25,4 +26,4 @@
         {% endif %}
     </tbody>
 </table>
-{% endblock %}
+{% endblock content %}

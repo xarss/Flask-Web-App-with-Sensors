@@ -7,6 +7,8 @@ class Actuator(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     device_id = db.Column("device_id", db.Integer(), db.ForeignKey(Device.id))
     type = db.Column(db.String(64), nullable=False)
+    room_id   = db.Column("room_id", db.Integer(), db.ForeignKey("rooms.id"))
+    value = db.Column("value", db.Integer())
 
     activations = db.relationship('Activation', backref='actuator')
 
@@ -16,9 +18,9 @@ class Actuator(db.Model):
         return actuator
 
     @staticmethod
-    def insert(name, description, isActive, type):
+    def insert(name, description, isActive, type, room_id, value=0):
         device = Device(name=name, description=description, isActive=isActive)
-        actuator = Actuator(type=type)
+        actuator = Actuator(type=type, room_id=room_id, value=value)
         device.actuators.append(actuator)
         db.session.add(device)
         db.session.commit()
